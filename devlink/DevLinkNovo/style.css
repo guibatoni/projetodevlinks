@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./profiles/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.185);
+  --surface-color-hover: rgba(255, 255, 255, 0.09);
+  --highlight-color: rgba(255, 255, 255, 0.4);
+  --switch-bg-url: url(./moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./profiles/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.2);
+  --highlight-color: rgba(0, 0, 0, 0.3);
+  --switch-bg-url: url(./sun.svg);
+}
+
+body {
+  /*background-image: url(./profiles/bg-mobile.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+#container {
+  width: 360px;
+
+  /*
+    Resumo do margin usado abaixo:
+
+    margin: auto;
+    margin-top: 56px;
+    margin-right: auto;
+    margin-bottom: auto ou 0px;
+    margin-left: auto;  */
+
+  margin: 56px auto 0px auto;
+
+  padding: 0 24px;
+}
+
+/* Profile*/
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+#profile img {
+  width: 112px;
+  border-radius: 50%;
+}
+
+/* Button */
+#switch {
+  position: relative;
+
+  width: 64px;
+  margin: auto;
+
+  padding: 4px;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border-radius: 50%;
+  border: 0;
+
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+#switch span {
+  display: block;
+
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border-radius: 99px;
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+/*links <lista> */
+
+#ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+#ul li a {
+  display: flex;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+#ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+#social-links a:hover {
+  background-color: var(--highlight-color);
+  border-radius: 50px;
+  transition: background 0.4s;
+}
+
+#bottom {
+  padding: 24px 0;
+  margin: auto;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+#bottom a:hover {
+  background-color: var(--surface-color-hover);
+  transition: 0.2s;
+  border-radius: 50px;
+  padding: 5px;
+}

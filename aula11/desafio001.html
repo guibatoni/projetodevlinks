@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BRASILEIRO OU ESTRANGEIRO?</title>
+    <style>
+      body {
+
+        background: rgb(138, 169, 255);
+        color: white;
+        font: normal 15pt arial;
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>TESTE DE NACIONALIDADE</h1>
+    Você mora em qual país? <input type="text" name="txtp" id="txtp" />
+    <input type="button" value="Confirmar." onclick="nac()" />
+
+    <div id="res"></div>
+
+    <script>
+      function nac() {
+        var txtp1 = window.document.querySelector("input#txtp");
+        console.log(txtp1);
+        var res = window.document.querySelector("div#res");
+        var nac = Number(txtp1.value);
+
+        txtp1.innerHTML = `<p> Seu pais e ${nac} entao:</p>`;
+        if (txtp1.value == "Brasil") {
+          res.innerHTML += `Você é <strong>brasileiro</strong>!`;
+        } else {
+          res.innerHTML += `Você é <strong> estrangeiro </strong>.`;
+        }
+        
+      }
+    </script>
+  </body>
+</html>
